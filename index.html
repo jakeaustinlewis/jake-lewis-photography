@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ajax Hero</title>
+    <script defer src="dog.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="dog.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Find A Pupper</h1>
+
+        <hr>
+
+        <form id="dogTypeContainer">
+            <section>
+
+                <label for="dog-breed" class="dogTypeSpace">Search by Dog Breed</label>
+                <input id="breed" name="dog-breed" type="text" value="">
+                <button id="searchDogButton" name="searchDogButton" class="button-primary" type="submit">Search Your Doggo!</button>
+
+            </section>
+
+            <h2>OR</h2>
+
+            <section id="ranDogContainer">
+
+                <label for="ranDogButton">Populate a Random Dog Picture</label>
+                <button id="ranDogButton" class="button-primary" type="submit">SHOW ME A DOG!</button>
+
+            </section>
+        </form>
+
+        <form action="" id="dogPicContainer">
+    
+                <h2>Results:</h2>
+           
+               <section id="centerPic"><img id="dogPic" src="" alt=""></img></section>
+ 
+        </form>
+        <!-- <h5 id="subBreed" class="subBreedList" border-bottom:"5px solid black">subBreed</h5> -->
+    </div>
+</body>
+
+</html>
