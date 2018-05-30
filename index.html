@@ -5,47 +5,44 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ajax Hero</title>
-    <script defer src="dog.js"></script>
+    <title>Jake Lewis Photography Portfolio</title>
+    <script defer src="jake-lewis-photography.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="dog.css">
+    <link rel="stylesheet" href="jake-lewis-photgraphy.css">
 </head>
 
 <body>
-    <div class="container">
-        <h1>Find A Pupper</h1>
+    <header class="containerHead">
+        <ul>
+            <li>
+                <a id="photosHead" href="#myPhotos">PHOTOS</a>
+            </li>
+            <li>
+                <a id="infoHead">INFO</a>
+            </li>
+            <!-- <label for="jake_logo"></label>
+            <button id="jake_logo" name="jake_logo" class="button" type="submit">
+                <img src="jakelewis_logo.svg"></img>
+            </button> -->
 
-        <hr>
+            <li>
+                <a id="contactHead">CONTACT</a>
+            </li>
+            <li>
+                <a id="dogsHead" href="http://dog-pic-generator.surge.sh/">DOGS</a>
+            </li>
+        </ul>
+    </header>
 
-        <form id="dogTypeContainer">
-            <section>
+    <main>
+        <div id="positionFixer"></div>
 
-                <label for="dog-breed" class="dogTypeSpace">Search by Dog Breed</label>
-                <input id="breed" name="dog-breed" type="text" value="">
-                <button id="searchDogButton" name="searchDogButton" class="button-primary" type="submit">Search Your Doggo!</button>
+        <section id="cameraPicture" rel="stylesheet" media="screen and (device-height: 600px)"></section>
+        <section id="myPhotos">
 
-            </section>
-
-            <h2>OR</h2>
-
-            <section id="ranDogContainer">
-
-                <label for="ranDogButton">Populate a Random Dog Picture</label>
-                <button id="ranDogButton" class="button-primary" type="submit">SHOW ME A DOG!</button>
-
-            </section>
-        </form>
-
-        <form action="" id="dogPicContainer">
-    
-                <h2>Results:</h2>
-           
-               <section id="centerPic"><img id="dogPic" src="" alt=""></img></section>
- 
-        </form>
-        <!-- <h5 id="subBreed" class="subBreedList" border-bottom:"5px solid black">subBreed</h5> -->
-    </div>
+    </main>
 </body>
 
 </html>

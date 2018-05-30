@@ -42,3 +42,5 @@ Problem Description
 
 
 The project will be a webpage that populates personal pictures from my adventures in life using the Flickr API. The webpage will be used as a personal portfolio to showcase my pictures to those that are interested in viewing my life's work. The webpage will use materialize and a few of flickr's javascript libraries to build.
+
+
