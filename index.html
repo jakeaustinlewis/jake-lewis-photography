@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Jake Lewis Photography Portfolio</title>
-    
-    
+
+
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-   
+
     <link rel="stylesheet" href="jake-lewis-photgraphy.css">
     <script defer src="jake-lewis-photography.js"></script>
 
@@ -25,34 +25,54 @@
 
 
 <body>
-    <header class="containerHead">
-        <ul>
-            <li>
-                <a id="photosHead" href="#myPhotos">PHOTOS</a>
-            </li>
-            <li>
-                <a id="infoHead">INFO</a>
-            </li>
-            <!-- <label for="jake_logo"></label>
-            <button id="jake_logo" name="jake_logo" class="button" type="submit">
-                <img src="jakelewis_logo.svg"></img>
-            </button> -->
+    <header>
+        <!-- <section id="intro"></section> -->
+        <nav id="content" class="containerHead">
+            <div class="nav-wrapper">
+                <ul id="nav-mobile">
+                    <li>
+                        <!-- <label for="jake_logo"></label>
+                        <button id="jake_logo" name="jake_logo" class="button" type="submit">
+                            <img src="jakelewis_logo.svg"></img>
+                        </button> -->
 
-            <li>
-                <a id="contactHead">CONTACT</a>
-            </li>
-            <li>
-                <a id="dogsHead" href="http://dog-pic-generator.surge.sh/">DOGS</a>
-            </li>
-        </ul>
+                        <a id="Home" class="section scrollspy" href="#cameraPicture">HOME</a>
+                    </li>
+                    <li>
+                        <a id="photosHead" class="section scrollspy" href="#photoArea">PHOTOS</a>
+                    </li>
+                    <li>
+                        <a id="infoHead" class="section scrollspy">INFO</a>
+                    </li>
+
+                    <li>
+                        <a id="contactHead" class="section scrollspy">CONTACT</a>
+                    </li>
+                    <li>
+                        <a id="dogsHead" class="section scrollspy" href="http://dog-pic-generator.surge.sh/">DOGS</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
     </header>
 
     <main>
-        <div id="positionFixer"></div>
+        <!-- <section id="navFixer" class="positionFixer"></section> -->
 
-        <section id="cameraPicture" rel="stylesheet" media="screen and (device-height: 600px)"></section>
-        <section id="myPhotos">
+        <div id="topOfPage" class="scrollspy"></div>
+        <div class="imgbox">
+            <section id="cameraPicture" class="" rel="stylesheet" media="screen and (device-height: 600px)"></section>
+        </div>
+        <!-- <img class"responsive-img" src="images/camera.jpg" alt=""> -->
 
+        <section id="positionPictures" class=""></section>
+        <section id="photoArea" class="scrollspy">
+            <!-- myPhotos acts as a container -->
+   
+            <section id="myPhotos" class="scrollspy"></section>
+
+        </section>
     </main>
 </body>
 
