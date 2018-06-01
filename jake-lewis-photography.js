@@ -39,21 +39,23 @@ document.addEventListener('DOMContentLoaded', function () {
     let link2 = `https://api.flickr.com/services/rest/?${params.method_albumPhotos}${params.api_key}${params.photoset_id}${params.user_id}${params.extras}${params.per_page}${params.format}${params.nojsoncallback}`;
 
 
-
+    // fetching all pictures in my flickr account
     fetch(link)
         .then(response => response.json())
         .then(data => {
             console.log(data);
             console.log(data.photos.photo);
             let myPhotos = document.getElementById('myPhotos');
+
+            //Add photos from API to myPhotos parent element
             for (let i = 0; i < data.photos.photo.length; i++) {
 
                 // Adding image
                 let photo_element = document.createElement("img");
                 let photo = data.photos.photo[i].url_l;
                 photo_element.setAttribute('src', photo);
-                photo_element.classList.add('materialboxed');
-                photo_element.classList.add('z-depth-4'); // Adds Shadow
+                photo_element.classList.add('materialboxed'); // Adds zoom on pictures
+                photo_element.classList.add('z-depth-4'); // Adds shadow on pictures
                 photo_element.classList.add('pictures');
                 // max-height: 470px margin: auto auto centers photos within dev container
                 // photo_element.style.cssText = `align-self: center; cursor: pointer; max-width: 100%; max-height: 197.9295px; border-radius: 4px; transition: box-shadow .2s`;
@@ -63,6 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
             photos_displayed();
         })
 
+    //fetching pictures from specific album
     fetch(link2)
         .then(response => response.json())
         .then(data => {
@@ -76,12 +79,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 paralPic.setAttribute('src', photo);
                 paralPic.style.cssText = `max-width: 100vw; min-width: 25%`;
                 // paralPic.style.zIndex = 99;
-
             }
         })
-
-
-
 
     function photos_displayed() {
         let elems = document.querySelectorAll('.materialboxed');
@@ -91,8 +90,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // let scroll_elems = document.querySelectorAll('.scrollspy');
         // let instances1 = M.ScrollSpy.init(scroll_elems, 500);
-
-
 
         $(document).ready(function () {
             $('#content').pushpin({
