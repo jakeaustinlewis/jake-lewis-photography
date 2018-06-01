@@ -3,19 +3,14 @@ document.addEventListener('DOMContentLoaded', function () {
     let myPhotos = document.getElementById('myPhotos');
     let photosHead = document.getElementById('photosHead');
     let cameraPicture = document.getElementById('cameraPicture');
-    let topOfPage = document.getElementById('topOfPage');
+
     let nav = document.getElementById('content');
-    let positionFixer = document.getElementById('positionFixer');
     let parallax1 = document.getElementById('parallax1');
     let parallax2 = document.getElementById('parallax2');
 
 
 
-    // positionFixer.style.height = 64;
-    // topOfPage.style.height = nav.style.height;
-    // let photosHead
-
-    params = {
+    params = {  
         "method_publicPhotos": "method=flickr.people.getPublicPhotos",
         "method_albumPhotos": "method=flickr.photosets.getPhotos",
         "api_key": "&api_key=b69f4589bad77785ad00bd9e625976bf",
@@ -29,22 +24,15 @@ document.addEventListener('DOMContentLoaded', function () {
         "photoset_id": "&photoset_id=72157667590992297"
     };
 
-    // photosHead.addEventListener('click', function (e) {
-    // e.preventDefault();
-    // });
-
-
     // let link = `https://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=b69f4589bad77785ad00bd9e625976bf&user_id=157366842@N07&extras=url_m&per_page=10&format=json&nojsoncallback=1`;
-    let link = `https://api.flickr.com/services/rest/?${params.method_publicPhotos}${params.api_key}${params.user_id}${params.extras}${params.per_page}${params.format}${params.nojsoncallback}`;
-    let link2 = `https://api.flickr.com/services/rest/?${params.method_albumPhotos}${params.api_key}${params.photoset_id}${params.user_id}${params.extras}${params.per_page}${params.format}${params.nojsoncallback}`;
+    let link_publicPhotos = `https://api.flickr.com/services/rest/?${params.method_publicPhotos}${params.api_key}${params.user_id}${params.extras}${params.per_page}${params.format}${params.nojsoncallback}`;
+    let link_albumPhotos = `https://api.flickr.com/services/rest/?${params.method_albumPhotos}${params.api_key}${params.photoset_id}${params.user_id}${params.extras}${params.per_page}${params.format}${params.nojsoncallback}`;
 
 
     // fetching all pictures in my flickr account
-    fetch(link)
+    fetch(link_publicPhotos)
         .then(response => response.json())
         .then(data => {
-            console.log(data);
-            console.log(data.photos.photo);
             let myPhotos = document.getElementById('myPhotos');
 
             //Add photos from API to myPhotos parent element
@@ -62,11 +50,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 myPhotos.appendChild(photo_element);
 
             }
-            photos_displayed();
+            materialboxedIntances();
         })
 
     //fetching pictures from specific album
-    fetch(link2)
+    fetch(link_albumPhotos)
         .then(response => response.json())
         .then(data => {
             console.log(data);
@@ -80,13 +68,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 paralPic.style.cssText = `max-width: 100vw; min-width: 25%`;
                 // paralPic.style.zIndex = 99;
             }
+            parallaxInstances();
         })
 
-    function photos_displayed() {
-        let elems = document.querySelectorAll('.materialboxed');
-        let instances = M.Materialbox.init(elems);
-        let elem = document.querySelectorAll('.parallax');
-        let instances1 = M.Parallax.init(elem);
+    function materialboxedIntances() {
+        let elem = document.querySelectorAll('.materialboxed');
+        let instances = M.Materialbox.init(elem);
+        // let elem = document.querySelectorAll('.parallax');
+        // let instances1 = M.Parallax.init(elem);
 
         // let scroll_elems = document.querySelectorAll('.scrollspy');
         // let instances1 = M.ScrollSpy.init(scroll_elems, 500);
@@ -103,6 +92,11 @@ document.addEventListener('DOMContentLoaded', function () {
         // $(document).ready(function(){
         //     $('.parallax').parallax();
         //   });
+    }
+
+    function parallaxInstances() {
+        let elem = document.querySelectorAll('.parallax');
+        let instances = M.Parallax.init(elem);
     }
 });
 //calculate height of camera picture

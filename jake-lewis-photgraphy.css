@@ -112,7 +112,7 @@ main{
   margin: 0 auto;
   position: relative;
 
-  /* accounts for the 50px move up from positionFixer */
+  /* accounts for the 50px correction from positionFixer */
   /* margin-top: 50px; */
 }
 
@@ -173,5 +173,4 @@ main{
 
 #inlineHeader {
   display: inline;
-
 }
