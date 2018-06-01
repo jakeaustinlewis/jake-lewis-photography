@@ -3,6 +3,7 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
+    /* background-color: #f3f5f6; */
 }
 
 body {
@@ -10,20 +11,23 @@ body {
     width: 100%;
     height: 100%;
     background-color: #eaeaea;
-    
 }
 a.active {
-  background-color: gray;
+  background-color: #4b4545;
 }
 /* .intro {
   height: 200px;
 } */
 nav {
   background-color: black;
-  z-index: 99;
+  z-index: 1;
   width: 100%;
   background-size: cover;
   padding: 0px;
+}
+
+nav ul li:hover {
+  background-color: #4b4545;
 }
 
 
@@ -51,8 +55,6 @@ nav {
   align-items: center;
   justify-content: space-around;
   font-size: 20px;
-
-
 }
 .containerHead a {
   color: #a6a5a6;
@@ -69,43 +71,35 @@ nav {
 
 .positionFixer {
   position: relative;
-  height: 64px;
+  height: 50px;
+  width: 100%;
+  /* height: 100%; */
+  /* padding-top: -50px;
+  top: -50px; */
+  
 }
-/* #camerContaier {
-  display: flex;
-  min-height: 600px;
-} */
+
 main{
   width: 100%;
   height: 100%;
 }
 
-/* .imgbox {
-  display: grid;
-  height: 100%;
-  position: relative;
-} */
-
 #cameraPicture {
   background-image: url("images/camera.jpg");
   background-repeat: no-repeat;
-  /* max-width: 1920px;
-  max-height: 1080px; */
   background-size: cover;
   background-position: center center;
-  width: 100vw;
-  margin: 0px auto 50px auto;
-  min-height: 100vh;
+  min-height: 100%;
   min-width: 480px;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+
   /* top: 50px; */
 
 }
-
-#photoArea {
-  padding-top: 70px;
-  display: flex;
-}
-
 #myPhotos {
   /* ensures that the devs (photo-containers) are populated horizontally */
   display: flex;
@@ -114,31 +108,73 @@ main{
   justify-content: space-evenly; 
   width: 100%;
   max-width: 1920px;
-  max-height: 500px;
+  max-height: 100%;
   min-height: 270px;
   min-width: 320px;
   margin: 0 auto;
   position: relative;
+
+  /* accounts for the 50px move up from positionFixer */
+  /* margin-top: 50px; */
+}
+
+#photosPosition {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+
 }
 
 #myPhotos div {
   /* centers pictures vertically with respect to the div container */
   display: flex; 
   justify-content: center;
+  border-radius: 4px;
+
   /* places four divs horizontally  */
   /* width: 25%; */
+  /* min-width: 148.172px; */
 
-  /* removes the need to calculate the size of the image */
-  box-sizing: border-box;
-  max-height: 100%;
-  min-width: 148.172px;
-  /* maybe change this for 470px; */
-  padding: 5px;
+  /* max-height: 100%; */
+  padding: 55px;
 }
 
 #photoArea {
   display: flex;
   justify-content: center;
   /* margin: 0 50px; */
-  
+}
+
+.pictures {
+  display: flex;
+  align-self: center;
+  cursor: pointer;
+  max-width: 100%;
+  max-height: 197.9295px;
+  border-radius: 4px;
+  transition: box-shadow .2s;
+}
+
+/* #parallax {
+  z-index: 99;
+} */
+
+/* .parallax-mirror {
+  z-index: 300 !important;
+} */
+
+.parallax-container {
+  height: 400px;
+  width: 100vw;
+  display: flex;
+  align-items: flex-end;
+}
+
+/* div.section.white {
+  height: 300px;
+} */
+
+#inlineHeader {
+  display: inline;
+
 }
