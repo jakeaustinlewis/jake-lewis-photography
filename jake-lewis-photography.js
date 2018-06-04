@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // Adding image
                 let photo_element = document.createElement("img"); //
-                let photo = publicPhotosArray[i].url_o; //change url_l to url_o for origonal size or url_m for a medium size
+                let photo = publicPhotosArray[i].url_l; //change url_l to url_o for origonal size or url_m for a medium size
                 photo_element.src = photo;
                 myPhotos.appendChild(photo_element);
                 photo_element.classList.add('materialboxed'); // Adds zoom on pictures
@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
 
     //fetching pictures from specific album
+    //assigns album photos to paralPics elements (paralPics0 & paralPics1)
     fetch(link_albumPhotos)
         .then(response => response.json())
         .then(data => {
@@ -59,18 +60,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Initialize materialboxed
     function materialboxedIntances() {
-        let elem = document.querySelectorAll('.materialboxed');
-        let instances = M.Materialbox.init(elem);
+        let materialBoxedElements = document.querySelectorAll('.materialboxed');
+        let materialBoxedInstances = M.Materialbox.init(materialBoxedElements);
 
-        // initialize scrollspy
-        $(document).ready(function () {
-            $('#content').pushpin({
-                top: $('#content').offset().top
-            });
-            $('.scrollspy').scrollSpy({
-                scrollOffset: 0
-            });
-        });
+        let scrollSpyElements = document.querySelectorAll('.scrollspy');
+        let scrollSpyOptions = {scrollOffset: 0} 
+        let scrollSpyInstances = M.ScrollSpy.init(scrollSpyElements, scrollSpyOptions);
+
+        // let pushPinElements = document.querySelectorAll('.pushpin');
+
     }
 
     // Initialize parallax 
