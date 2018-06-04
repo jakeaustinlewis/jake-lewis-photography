@@ -30,7 +30,6 @@ nav ul li:hover {
   background-color: #4b4545;
 }
 
-
 .containerHead {
   display: flex;
 
@@ -64,18 +63,14 @@ nav ul li:hover {
 }
 
 .positionFixer {
+  top: -50px;
   position: relative;
   height: 100%;
   width: 100%;
-/* 
-  padding-top: -50px; */
-  /* top: -50px; */
-  
 }
 
-#navFixerAboutMe {
-  top: -50px;
-}
+/* #aboutMeContainer {
+} */
 
 main{
   width: 100%;
@@ -120,7 +115,6 @@ main{
   position: absolute;
   left: 0px;
   bottom: 0px;
-
 }
 
 #myPhotos div {
@@ -142,12 +136,6 @@ main{
   width: 100%;
   height: 100%;
   margin: 0 50px;
-}
-
-#navFixer {
-  width: 100%;
-  height: 100%;
-  top: -50px;
 }
 
 .pictures {

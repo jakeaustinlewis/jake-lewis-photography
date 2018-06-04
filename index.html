@@ -30,11 +30,11 @@
                         <a id="Home" class="" href="#cameraPicture">HOME</a>
                     </li>
                     <li>
-                        <a id="infoHead" class="" href="#navFixerAboutMe">INFO</a>
+                        <a id="infoHead" class="" href="#aboutMeContainer">INFO</a>
 
                     </li>
                     <li>
-                        <a id="photosHead" class="" href="#navFixer">PHOTOS</a>
+                        <a id="photosHead" class="" href="#myPhotos">PHOTOS</a>
                     </li>
 
                     <li>
@@ -50,48 +50,42 @@
     </header>
 
     <main>
-        <!-- <section id="navFixer" class="positionFixer"></section> -->
 
+        <!-- Navbar places the camera pic starting point 50 px above the bottom of navbar -->
+        <section id="cameraPicture" class="section scrollspy" rel="stylesheet" media=""></section>
 
+        <section id="aboutMeContainer" class="section positionFixer scrollspy">
 
-
-
-        <section id="cameraPicture" class="section scrollspy" rel="stylesheet" media="">
-
-            <!-- Navbar places the camera pic starting point 50 px above the bottom of navbar -->
-
-
-        </section>
-
-        <section id="navFixerAboutMe" class="positionFixer scrollspy">
+            <!-- top parallax picture section -->
             <div class="parallax-container center valign-wrapper">
                 <div id="parallax0" class="parallax center valign-wrapper">
                     <img id="paralPic0" src="">
                 </div>
             </div>
+
+            <!-- White bar between two parallax pictures -->
             <div id="whiteParallax" class="section white">
                 <div class="row container">
                     <h2 class="header">About me</h2>
                     <p class="grey-text text-darken-3 lighten-3"> I'm an active human that enjoys human things, like drinking water. That's what seperates me from the
-                        competition.</p>
+                        competition.
+                    </p>
                 </div>
-
             </div>
 
+            <!-- bottom parallax picture section -->
             <div class="parallax-container center valign-wrapper">
                 <div id="parallax1" class="parallax">
                     <img id="paralPic1" src="">
                 </div>
-
             </div>
 
         </section>
-        <section id="navFixer" class="positionFixer section scrollspy">
-            <!-- <section id="navFixer" class="positionFixer section scrollspy"> -->
-            <!-- <section id="photosArea"> -->
 
-            <section id="myPhotos" class=""></section>
-        </section>
+
+        <!-- parent element of the fetched photos -->
+        <section id="myPhotos" class="positionFixer section scrollspy"></section>
+
     </main>
 </body>
 

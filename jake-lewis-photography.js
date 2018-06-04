@@ -1,16 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    document.body.scrollTop = 0;
-    let myPhotos = document.getElementById('myPhotos');
-    let photosHead = document.getElementById('photosHead');
-    let cameraPicture = document.getElementById('cameraPicture');
-
-    let nav = document.getElementById('content');
-    let parallax1 = document.getElementById('parallax1');
-    let parallax2 = document.getElementById('parallax2');
-
-
-
-    params = {  
+    params = {
         "method_publicPhotos": "method=flickr.people.getPublicPhotos",
         "method_albumPhotos": "method=flickr.photosets.getPhotos",
         "api_key": "&api_key=b69f4589bad77785ad00bd9e625976bf",
@@ -33,22 +22,21 @@ document.addEventListener('DOMContentLoaded', function () {
     fetch(link_publicPhotos)
         .then(response => response.json())
         .then(data => {
-            let myPhotos = document.getElementById('myPhotos');
+            console.log(data);
+            let myPhotos = document.getElementById('myPhotos'); //my Photos is a section containing the populated photos
+            let publicPhotosArray = data.photos.photo;
 
-            //Add photos from API to myPhotos parent element
-            for (let i = 0; i < data.photos.photo.length; i++) {
+            //Add photos from API to myPhotos (parent element)
+            for (let i = 0; i < publicPhotosArray.length; i++) {
 
                 // Adding image
-                let photo_element = document.createElement("img");
-                let photo = data.photos.photo[i].url_l;
-                photo_element.setAttribute('src', photo);
-                photo_element.classList.add('materialboxed'); // Adds zoom on pictures
-                photo_element.classList.add('z-depth-4'); // Adds shadow on pictures
-                photo_element.classList.add('pictures');
-                // max-height: 470px margin: auto auto centers photos within dev container
-                // photo_element.style.cssText = `align-self: center; cursor: pointer; max-width: 100%; max-height: 197.9295px; border-radius: 4px; transition: box-shadow .2s`;
+                let photo_element = document.createElement("img"); //
+                let photo = publicPhotosArray[i].url_o; //change url_l to url_o for origonal size or url_m for a medium size
+                photo_element.src = photo;
                 myPhotos.appendChild(photo_element);
-
+                photo_element.classList.add('materialboxed'); // Adds zoom on pictures
+                photo_element.classList.add('pictures'); // photo_element.style.cssText = `align-self: center; cursor: pointer; max-width: 100%; max-height: 197.9295px; border-radius: 4px; transition: box-shadow .2s`; also max-height: 470px margin: auto auto centers photos within dev container
+                photo_element.classList.add('z-depth-4'); // Adds shadow on pictures
             }
             materialboxedIntances();
         })
@@ -59,27 +47,22 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(data => {
             console.log(data);
             let photoArray = data.photoset.photo;
-            let myPhotos = document.getElementById('myPhotos');
             for (let i = 0; i < photoArray.length; i++) {
                 let paralPic = document.getElementById(`paralPic${i}`);
                 console.log(`paralPic${i}`);
                 let photo = photoArray[i].url_o;
                 paralPic.setAttribute('src', photo);
                 paralPic.style.cssText = `max-width: 100vw; min-width: 25%`;
-                // paralPic.style.zIndex = 99;
             }
             parallaxInstances();
         })
 
+    // Initialize materialboxed
     function materialboxedIntances() {
         let elem = document.querySelectorAll('.materialboxed');
         let instances = M.Materialbox.init(elem);
-        // let elem = document.querySelectorAll('.parallax');
-        // let instances1 = M.Parallax.init(elem);
 
-        // let scroll_elems = document.querySelectorAll('.scrollspy');
-        // let instances1 = M.ScrollSpy.init(scroll_elems, 500);
-
+        // initialize scrollspy
         $(document).ready(function () {
             $('#content').pushpin({
                 top: $('#content').offset().top
@@ -88,12 +71,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 scrollOffset: 0
             });
         });
-
-        // $(document).ready(function(){
-        //     $('.parallax').parallax();
-        //   });
     }
 
+    // Initialize parallax 
     function parallaxInstances() {
         let elem = document.querySelectorAll('.parallax');
         let instances = M.Parallax.init(elem);
