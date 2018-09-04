@@ -1,92 +1,65 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Jake Lewis Photography Portfolio</title>
-
-
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-
     <link rel="stylesheet" href="jake-lewis-photgraphy.css">
     <script defer src="jake-lewis-photography.js"></script>
-
 </head>
-
 <body>
-    <header>
-        <!-- <section id="intro"></section> -->
-        <nav id="content" class="containerHead">
-            <div class="nav-wrapper collapse navbar-collapse">
-                <ul id="nav-mobile">
-                    <li>
-                        <a id="Home" class="" href="#cameraPicture">HOME</a>
-                    </li>
-                    <li>
-                        <a id="infoHead" class="" href="#aboutMeContainer">INFO</a>
-
-                    </li>
-                    <li>
-                        <a id="photosHead" class="" href="#myPhotos">PHOTOS</a>
-                    </li>
-
-                    <li>
-                        <a id="contactHead" class="">CONTACT</a>
-                    </li>
-                    <li>
-                        <a id="dogsHead" class="" href="http://dog-pic-generator.surge.sh/">DOGS</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
-    </header>
-
+    <nav id="content" class="containerHead">
+        <div class="nav-wrapper collapse navbar-collapse">
+            <ul id="nav-mobile">
+                <li>
+                    <a id="Home" href="#cameraPicture">HOME</a>
+                </li>
+                <li>
+                    <a id="infoHead" href="#aboutMeContainer">INFO</a>
+                </li>
+                <li>
+                    <a id="photosHead" href="#myPhotos">PHOTOS</a>
+                </li>
+                <li>
+                    <a id="contactHead" href="#">CONTACT</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <main>
-
         <!-- Navbar places the camera pic starting point 50 px above the bottom of navbar -->
         <section id="cameraPicture" class="section scrollspy" rel="stylesheet" media=""></section>
-
         <section id="aboutMeContainer" class="section positionFixer scrollspy">
-
             <!-- top parallax picture section -->
             <div class="parallax-container center valign-wrapper">
                 <div id="parallax0" class="parallax center valign-wrapper">
-                    <img id="paralPic0" src="">
+                    <img id="paralPic0" />
                 </div>
             </div>
-
             <!-- White bar between two parallax pictures -->
             <div id="whiteParallax" class="section white">
                 <div class="row container">
                     <h2 class="header">About me</h2>
-                    <p class="grey-text text-darken-3 lighten-3"> I'm an active human that enjoys human things, like drinking water. That's what seperates me from the
-                        competition.
+                    <p class="grey-text text-darken-3 lighten-3">
+                        I'm an active human that enjoys human things, like drinking water. 
+                        That's what seperates me from the competition.
                     </p>
                 </div>
             </div>
-
             <!-- bottom parallax picture section -->
             <div class="parallax-container center valign-wrapper">
                 <div id="parallax1" class="parallax">
-                    <img id="paralPic1" src="">
+                    <img id="paralPic1" />
                 </div>
             </div>
-
         </section>
-
-
         <!-- parent element of the fetched photos -->
         <section id="myPhotos" class="positionFixer section scrollspy"></section>
-
     </main>
 </body>
-
 </html>
